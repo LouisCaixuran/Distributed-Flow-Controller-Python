@@ -1,0 +1,74 @@
+{
+    "configurations":
+    {
+            "file_name": "friendMap.py",
+
+            "parallel":"false",
+
+            "subject":"S",
+            
+            "label": {
+                "owner" : "S",
+                "readers": [
+                    {"id":"S"}
+                ],
+                "writers": [
+                    {"id":"s"}
+                ]
+            },
+
+            "global_vars": [
+                {
+                    "id":"alice",
+                    "label": {
+                        "owner" : "alice",
+                        "readers": [
+                            {"id": "alice"},
+                            {"id": "bob"},
+                            {"id": "john"}              
+                        ],
+                        "writers": [
+                             {"id": "alice"}
+                        ]
+                    }
+                },
+
+                {
+                    "id":"bob",
+                    "label": {
+                        "owner" : "bob",
+                        "readers": [
+                            {"id": "alice"},
+                            {"id": "bob"},            
+                        ],
+                        "writers": [
+                             {"id": "bob"}
+                        ]
+                    }
+                },
+
+                 {
+                    "id":"john",
+                    "label": {
+                        "owner" : "john",
+                        "readers": [
+                            {"id": "alice"},
+                            {"id": "john"},            
+                        ],
+                        "writers": [
+                             {"id": "john"}
+                        ]
+                    }
+                }
+            ],
+            
+            "method_label": [
+
+            ],
+
+            "threads": [
+
+            ] 
+    }
+            
+}
