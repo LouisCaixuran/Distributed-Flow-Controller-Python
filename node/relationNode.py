@@ -21,17 +21,25 @@ class RelationNode:
 		with open("../keys.json", "w") as outfile:
    	 		json.dump(self.keyMap, outfile)
 		
-		#you could find label_list and most related information in newJson
-		self.newJson=parse_json.JSONParser(json_files,data=self.user_inputs)
+		
 
-		for i in self.newJson.globals.keys():
-			globals()[i] = createStoreNode(address[i])
+		for i in self.user_inputs["configurations"]["global_vars"]:
+			globals()[i["id"]] = createStoreNode(address[i["id"]])
 
 
+		self.newJson=None
 
 		listen()
 
 
+
+
+	def generateLocalLabel(self,user):
+		user=self.keyMap[user]
+		self.user_inputs["configurations"]["label"]={"owner":user,"readers":[{"id":user}], "writer":[{"id":user}]}
+		self.newJson=parse_json.JSONParser("",data=self.user_inputs)
+
+	
 
 
 

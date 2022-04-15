@@ -7,28 +7,20 @@
 
             "subject":"S",
             
-            "label": {
-                "owner" : "S",
-                "readers": [
-                    {"id":"S"}
-                ],
-                "writers": [
-                    {"id":"s"}
-                ]
-            },
+            "label":{},
 
             "global_vars": [
                 {
                     "id":"alice",
                     "label": {
-                        "owner" : "alice",
+                        "owner" : "A",
                         "readers": [
-                            {"id": "alice"},
-                            {"id": "bob"},
-                            {"id": "john"}              
+                            {"id": "A"},
+                            {"id": "B"},
+                            {"id": "J"}              
                         ],
                         "writers": [
-                             {"id": "alice"}
+                             {"id": "A"}
                         ]
                     }
                 },
@@ -36,13 +28,13 @@
                 {
                     "id":"bob",
                     "label": {
-                        "owner" : "bob",
+                        "owner" : "B",
                         "readers": [
-                            {"id": "alice"},
-                            {"id": "bob"},            
+                            {"id": "A"},
+                            {"id": "B"},            
                         ],
                         "writers": [
-                             {"id": "bob"}
+                             {"id": "B"}
                         ]
                     }
                 },
@@ -50,13 +42,13 @@
                  {
                     "id":"john",
                     "label": {
-                        "owner" : "john",
+                        "owner" : "J",
                         "readers": [
-                            {"id": "alice"},
-                            {"id": "john"},            
+                            {"id": "A"},
+                            {"id": "J"},            
                         ],
                         "writers": [
-                             {"id": "john"}
+                             {"id": "J"}
                         ]
                     }
                 }
