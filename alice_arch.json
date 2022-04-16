@@ -1,0 +1,17 @@
+{
+    "status": "uninitialized",
+    "configuration": {
+        "allow_access": false
+    },
+    "key": "",
+    "id": "",
+    "data": {
+        "name": "Alice",
+        "address": "Madison, WI"
+    },
+    "label": {
+        "owner": "",
+        "reader": [],
+        "writer": []
+    }
+}
