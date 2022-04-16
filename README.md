@@ -12,7 +12,7 @@
 
 
 ## create_store_node.py
-Use the file loction of 'create_store_node.py' and creation time as ID (owned by creater only), and encrypt ID with hashmap
+Use the json file loction of the store data and creation time as ID (owned by creater only), and encrypt ID with hashmap
 The input should be the json format data (address, ...) (codes as string are also allowed for worker node to call) and the label
 After taking the above input, create a new process and listen for data request
 If the requester is a friend, send back the encrypt information containing the address (only the requester with key ID can decrypt the information)
