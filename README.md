@@ -8,3 +8,23 @@
 5. (Not decided yet) Principals and labeling design
 6. (Optional) Instead of local server and clients, we can extend our distributed system on remote machines. SSL, message transportation, and others need to be considered
 7. (Optional) Make the demo work on Docker
+
+
+
+## create_store_node.py
+Use the file loction of 'create_store_node.py' and creation time as ID (owned by creater only), and encrypt ID with hashmap
+The input should be the json format data (address, ...) (codes as string are also allowed for worker node to call) and the label
+After taking the above input, create a new process and listen for data request
+If the requester is a friend, send back the encrypt information containing the address (only the requester with key ID can decrypt the information)
+
+If that node stores code, it should have:
+Codes 1 that generate needed information holder (with caller input)
+Codes 2 that process the collected information and draw map
+
+## create_worker_node.py
+Consider a case where Alice wants to draw her friend map.
+Codes 1 is first fatched and execute, the code gives all the friend information as output
+Then codes 2 is executed and a map is finished
+Create a new store node and store the map (label handled by pifthon?)
+
+Another case is the new friend request case. This case is more tricky because it involves label change.
