@@ -13,3 +13,6 @@ pftester.generateLabels("A",keyMap)
 #check if the user could access the list of address
 print(pftester.checkSecure(["alice","bob","john"]))
 
+pftester.generateLabels("J",keyMap)
+
+print(pftester.checkSecure(["alice","bob","john"]))
