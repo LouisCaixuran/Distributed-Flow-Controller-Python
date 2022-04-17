@@ -31,3 +31,23 @@ Another case is the new friend request case. This case is more tricky because it
 
 ## DNS-like redirector DNS.py
 Every time a store node is up, the store node sends its port and id to the DNS so that DNS knows how to connect this node once other nodes attempt to connect.
+
+
+# Case Study
+1. Start the DNS server. Every newly generated node should first log its port in the DNS server for future connection. 
+2. Initialize three store nodes, Alice, Bob, and John, with predefined JSON configuration files. All three nodes contain address information in the 'data' property and security information in the 'label' property. Initially, they only include themselves in their reader label. The exception is that John allows reading access to all nodes in its configuration. Every node should have a key and corresponding encrypted ID for authentication purposes. The key is defined as the JSON file's location and creation time. For example, key "D:\\Downloads\\CS 704\\project\\Distributed-Flow-Controller-Python\\alice.json_21:20:33" is encrypted as ID "00295eabeceb3182c5e2fe80ea4f9f3f8a0729481748f399eaeb15ecfb1862fb"
+3. Initialize two store nodes, friend_request and get_friends_location. They store the runnable code. Every code snippet consists of two parts. The first communicates with other store nodes to get all data needed. The part might require label access and label change. The second part input all the data gathered into the execution code to generate the desired result. For example, the first part of get_friends_location fetches all the address information of friends. In the second part, the worker node combines them and stores the result in a new store node. 
+4. Initialize worker node(s) that pull the code from friend_request and send friend requests to each other and update their labels. After a set of requests, their labels are 
+{id:Alice, label: {owner: A, writer:[A], reader:[A,B,J] }}, (friend: BJ, and only accessible to friends)
+{id:Bob, label: {owner: B, writer:[B], reader:[A,B] }}, (friend: A, and only accessible to friends)
+{id:John, label: {owner: J, writer:[J], reader:[A,B,J] }} (friend: A, and accessible to anyone)
+5. Alice creates a new work node that copies the code from get_friends_location store node ((-, reader:everyone, writer:null)) which generate each friend's address, and finally attaches the label using Pifthon.
+{id:Alice_friend, label: {owner: - , writer:[ABJ], reader:[A,B] }} # use join operation with Pifthon rules 
+Note John is not on the reader list because Bob does not want strangers to see his address
+6. When John wants to access Alice_friend node using draw_map function (also stored in a store node and copied by a worker node), he would be denied because he does not have the permission.
+7. However, if Bob wants to access Alice_friend node using draw_map function, he should be granted. We call the draw_map and store the result in Alice_friend_map_Bob store node
+{id: Alice_friend_map_Bob, label: {owner: - , writer:[ABJ], reader:[A,B] }}
+8. The result of draw_map would generate a map with pins on it to show the friend's address
+
+
+
