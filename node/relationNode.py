@@ -34,17 +34,14 @@ class RelationNode:
 
 
 
-	def generateLocalLabel(self,user):
+	def generateLocalLabelforOUser(self,user):
 		user=self.keyMap[user]
+
 		self.user_inputs["configurations"]["label"]={"owner":user,"readers":[{"id":user}], "writer":[{"id":user}]}
 		self.newJson=parse_json.JSONParser("",data=self.user_inputs)
 
 	
 
-
-
-
-	
 			
 
 	
@@ -80,8 +77,8 @@ class RelationNode:
         except Exception:
             return False
         else:
-            	tokens += temp_tokens
-            # print(tokens)
+            tokens += temp_tokens
+            print(tokens)
         return True
        
 

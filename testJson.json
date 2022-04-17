@@ -1,4 +1,5 @@
-{"configurations":
+{
+    "configurations":
     {
             "file_name": "friendMap.py",
 
@@ -30,7 +31,7 @@
                         "owner" : "B",
                         "readers": [
                             {"id": "A"},
-                            {"id": "B"},            
+                            {"id": "B"}            
                         ],
                         "writers": [
                              {"id": "B"}
@@ -44,7 +45,7 @@
                         "owner" : "J",
                         "readers": [
                             {"id": "A"},
-                            {"id": "J"},            
+                            {"id": "J"}          
                         ],
                         "writers": [
                              {"id": "J"}
