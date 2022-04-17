@@ -1,19 +1,21 @@
 {
     "status": "available",
     "configuration": {
-        "allow_access": false
+        "allow_access": true
     },
-    "key": "/Users/jaye/Downloads/Distributed-Flow-Controller-Python/alice.json_17:05:04",
-    "id": "912c3dada9ab1412732adc21e40c9c094aaf2e276cc3296b3b60f76b18d65c47",
+    "key": "D:\\Downloads\\CS 704\\project\\Distributed-Flow-Controller-Python\\alice.json_21:20:33",
+    "id": "00295eabeceb3182c5e2fe80ea4f9f3f8a0729481748f399eaeb15ecfb1862fb",
     "data": {
         "name": "Alice",
         "address": "Madison, WI"
     },
     "label": {
-        "owner": "912c3dada9ab1412732adc21e40c9c094aaf2e276cc3296b3b60f76b18d65c47",
-        "reader": [],
+        "owner": "00295eabeceb3182c5e2fe80ea4f9f3f8a0729481748f399eaeb15ecfb1862fb",
+        "reader": [
+            "*"
+        ],
         "writer": [
-            "912c3dada9ab1412732adc21e40c9c094aaf2e276cc3296b3b60f76b18d65c47"
+            "00295eabeceb3182c5e2fe80ea4f9f3f8a0729481748f399eaeb15ecfb1862fb"
         ]
     }
 }

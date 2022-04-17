@@ -28,3 +28,6 @@ Then codes 2 is executed and a map is finished
 Create a new store node and store the map (label handled by pifthon?)
 
 Another case is the new friend request case. This case is more tricky because it involves label change.
+
+## DNS-like redirector DNS.py
+Every time a store node is up, the store node sends its port and id to the DNS so that DNS knows how to connect this node once other nodes attempt to connect.

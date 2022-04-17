@@ -1,7 +1,7 @@
 {
     "status": "uninitialized",
     "configuration": {
-        "allow_access": false
+        "allow_access": true
     },
     "key": "",
     "id": "",
