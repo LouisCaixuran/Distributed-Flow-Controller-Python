@@ -71,12 +71,15 @@ class PifthonRunner:
 
 		
 	#generate everything needed and change it to structure pifthon needed
-	def generateLabels(self,user,keyMap):
+	def generateLabels(self,user,keyMap=None):
+		if keyMap==None:
+			keyMap=self.keyMap
+		else:
+			self.keyMap=keyMap
 		self.generateGlobalLabels(keyMap)
 		self.generateUserLabels(user,keyMap)
 		self.labelInfo=JSONParser("",data=self.finalL)
 		self.finalL=copy.deepcopy(self.originL)
-
 
 
 	def generateStatement(self,requestList):
@@ -105,10 +108,10 @@ class PifthonRunner:
 		try:
 			temp_tokens = execute('<stdin>',statement, tokens, labelinfo)
 		except Exception:
-			print(tokens)
+			#print(tokens)
 			return False
 		else:
 			tokens += temp_tokens
-			print(tokens)
+			#print(tokens)
 		return True
 	   

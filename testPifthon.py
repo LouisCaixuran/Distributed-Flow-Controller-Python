@@ -13,6 +13,12 @@ pftester.generateLabels("A",keyMap)
 #check if the user could access the list of address
 print(pftester.checkSecure(["alice","bob","john"]))
 
-pftester.generateLabels("J",keyMap)
 
+#Only the first time need to generate all the labels in one workerNode. After that, only generate user label is enough
+pftester.generateLabels("J")
+
+#This would fail as bob not allow john to access
 print(pftester.checkSecure(["alice","bob","john"]))
+
+#This would be success
+print(pftester.checkSecure(["alice","john"]))
