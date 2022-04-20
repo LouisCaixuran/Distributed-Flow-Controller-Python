@@ -5,7 +5,7 @@ import warnings
 import matplotlib.cbook
 
 
-def draw_map(friends_address={"alice":(43.07167832752132, -89.40666590224633),"bob":(42.35087234171386, -71.10510942329232),"john":(40.952173148593396, -76.88535528597656)}):
+def draw_map(file=".",friends_address={"alice":(43.07167832752132, -89.40666590224633),"bob":(42.35087234171386, -71.10510942329232),"john":(40.952173148593396, -76.88535528597656)}):
     fig = plt.figure(num=None, figsize=(12, 8) ) 
     m = Basemap(width=6000000,height=4500000,resolution='c',projection='aea',lat_1=35.,lat_2=45.,lon_0=-100,lat_0=40)
     m.drawcoastlines(linewidth=0.5)
@@ -19,7 +19,7 @@ def draw_map(friends_address={"alice":(43.07167832752132, -89.40666590224633),"b
         plt.plot(x,y,'ro', markersize=5)
         plt.text(x,y,i,fontsize="large")
        
-
+    plt.savefig(file+'/friendMap.png')
     plt.show()
     return 
 
