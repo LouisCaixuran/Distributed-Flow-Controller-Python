@@ -45,6 +45,7 @@
                         "owner" : "J",
                         "readers": [
                             {"id": "A"},
+                            {"id": "B"},
                             {"id": "J"}          
                         ],
                         "writers": [
