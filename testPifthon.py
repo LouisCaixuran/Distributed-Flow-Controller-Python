@@ -22,3 +22,5 @@ print(pftester.checkSecure(["alice","bob","john"]))
 
 #This would be success
 print(pftester.checkSecure(["alice","john"]))
+
+pftester.generateLabels("B")
