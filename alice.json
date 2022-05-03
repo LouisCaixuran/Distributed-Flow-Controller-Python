@@ -7,7 +7,8 @@
     "id": "00295eabeceb3182c5e2fe80ea4f9f3f8a0729481748f399eaeb15ecfb1862fb",
     "data": {
         "name": "Alice",
-        "address": "Madison, WI"
+        "address": "Madison, WI",
+        "friends": ["51cf34477c01491aa4d817ed4cfd68ac3ee138dca9c5ffd4bf498d903fc07aeb", "006726ed5e8d665f4c45571ef050ffadb8bb281c7b90785eef658391d4e2b5fb"]
     },
     "label": {
         "owner": "00295eabeceb3182c5e2fe80ea4f9f3f8a0729481748f399eaeb15ecfb1862fb",

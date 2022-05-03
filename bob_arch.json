@@ -1,13 +1,13 @@
 {
     "status": "uninitialized",
     "configuration": {
-        "allow_access": true
+        "allow_access": false
     },
     "key": "",
     "id": "",
     "data": {
-        "name": "Alice",
-        "address": "Madison, WI",
+        "name": "Bob",
+        "address": "San Francisco, CA",
         "friends": []
     },
     "label": {

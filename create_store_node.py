@@ -75,12 +75,12 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                     break
 
                 data = data.decode("utf-8")
-                print(data)
-                operation, key = data.split(" ") # e.g. GET [dir]
-                if operation == 'GET':
+                data = json.loads(data)
+                if data["operation"] == 'GET':
+                    key = data["key"]
                     h.update(key.encode('ascii'))
                     if (h.hexdigest() in obj['label']['reader']) or ('*' in obj['label']['reader']):
-                        conn.sendall(bytes(json.dumps(obj['data']), encoding="utf-8"))
+                        conn.sendall(bytes(json.dumps({"status": "success", "data": obj['data']}), encoding="utf-8"))
                     else:
                         conn.sendall(bytes(json.dumps({"status": "reject"}), encoding="utf-8"))
                 

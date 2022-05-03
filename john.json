@@ -1,0 +1,22 @@
+{
+    "status": "available",
+    "configuration": {
+        "allow_access": true
+    },
+    "key": "D:\\Downloads\\CS 704\\project\\Distributed-Flow-Controller-Python\\john.json_01:23:07",
+    "id": "006726ed5e8d665f4c45571ef050ffadb8bb281c7b90785eef658391d4e2b5fb",
+    "data": {
+        "name": "John",
+        "address": "Atlanta, GA",
+        "friends": ["00295eabeceb3182c5e2fe80ea4f9f3f8a0729481748f399eaeb15ecfb1862fb"]
+    },
+    "label": {
+        "owner": "006726ed5e8d665f4c45571ef050ffadb8bb281c7b90785eef658391d4e2b5fb",
+        "reader": [
+            "*"
+        ],
+        "writer": [
+            "006726ed5e8d665f4c45571ef050ffadb8bb281c7b90785eef658391d4e2b5fb"
+        ]
+    }
+}

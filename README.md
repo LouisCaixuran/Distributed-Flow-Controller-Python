@@ -50,4 +50,11 @@ Note John is not on the reader list because Bob does not want strangers to see h
 8. The result of draw_map would generate a map with pins on it to show the friend's address
 
 
-
+# How to run?
+```
+python .\DNS.py
+python .\create_store_node.py .\alice.json
+python .\create_store_node.py .\bob.json
+python .\create_store_node.py .\john.json
+python .\create_worker_node.py "D:\Downloads\CS 704\project\Distributed-Flow-Controller-Python\alice.json_21:20:33"
+```
