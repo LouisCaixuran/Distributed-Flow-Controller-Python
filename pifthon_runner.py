@@ -90,14 +90,20 @@ class PifthonRunner:
 			userS=userS+i+"+"
 
 		statement=statement+userS[:-1]+"\n"
-		return statement+"finalDestination=tmp"
+		return statement
 
-
-
-
-
-	def checkSecure(self,requestList):
+	def getLabel(self,requestList):
 		statement=self.generateStatement(requestList)
+		return self.get_label_pifthon(statement,self.labelInfo)
+
+
+
+
+
+	def checkSecure(self,label):
+		self.labelInfo.addGlob("finalL",label)
+		statement="finalL="+str(random.random())+"\n"+"finalDestination=finalL\n"
+
 		print(statement)
 		return self.run_pifthon(statement,self.labelInfo)
 
@@ -106,7 +112,7 @@ class PifthonRunner:
 		tokens = []
 		temp_tokens = None
 		try:
-			temp_tokens = execute('<stdin>',statement, tokens, labelinfo)
+			temp_tokens,tmp = execute('<stdin>',statement, tokens, labelinfo)
 		except Exception:
 			#print(tokens)
 			return False
@@ -114,4 +120,22 @@ class PifthonRunner:
 			tokens += temp_tokens
 			#print(tokens)
 		return True
-	   
+	
+	def get_label_pifthon(self,statement,labelinfo):
+		tokens = []
+		temp_tokens = None
+		try:
+			temp_tokens,tmp = execute('<stdin>',statement, tokens, labelinfo)
+		except Exception:
+			#print(tokens)
+			return None
+		else:
+			tokens += temp_tokens
+			#print(tmp)
+		label={"owner": tmp["tmp"].owner, "readers": [], "writers": []}
+		for i in tmp["tmp"].readers:
+			label["readers"].append({"id":i})
+		for i in tmp["tmp"].writers:
+			label["writers"].append({"id":i})
+		#print(label)
+		return label
